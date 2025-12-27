@@ -3,5 +3,5 @@ A simple and beginner-friendly web app that lets you search for Pokémon by name
 
 ## How to clone the repository
 
-git clone https://github.com/tulio-ferreira21/pokemon-search
-cd pokemon-search
+- git clone https://github.com/tulio-ferreira21/pokemon-search
+- cd pokemon-search
