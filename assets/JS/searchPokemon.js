@@ -152,7 +152,7 @@ async function searchPokemon() {
     createCardPokemon(pokemon);
   } catch (error) {
     createErroMessage(
-      'Erro na requisição ou pokemón inexistente: ' + error.message
+      'Erro na requisição ou pokemón inexistente'
     );
   }
 }

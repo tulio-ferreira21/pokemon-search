@@ -15,7 +15,7 @@ $buttonBgColor: blue;
 
 body{
    @include flexbox();
-   height: 60vh;
+   height: 70vh;
    background-image: url(../public/background.jpg);
    flex-direction: column;
    gap: 4rem;
@@ -27,7 +27,7 @@ body{
     animation: Inpkm 0.8s forwards;
 }
 .top-img img{
-    max-width: 500px;
+    max-width: 400px;
     width: 100%
 }
 .search-container{
