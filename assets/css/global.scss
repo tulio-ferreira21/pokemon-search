@@ -1,0 +1,75 @@
+$radius: 12px;
+$overlay:  #000000b8;
+$buttonBgColor: blue;
+@mixin flexbox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+   @include flexbox();
+   height: 60vh;
+   background-image: url(../public/background.jpg);
+   flex-direction: column;
+   gap: 4rem;
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-attachment: fixed
+}
+.top-img{
+    animation: Inpkm 0.8s forwards;
+}
+.top-img img{
+    max-width: 500px;
+    width: 100%
+}
+.search-container{
+    @include flexbox();
+    max-width: 750px;
+    width: 100%;
+    border: 1px solid $overlay;
+    padding: 2rem;
+    border-radius: $radius;
+    background-color: #ffffff8f;
+    backdrop-filter: blur(10px);
+    animation: form 0.7s ease-in-out;
+}
+.search{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+.search input{
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid black;
+    border-radius: $radius;
+    font-size: 1rem;
+}
+.search label{
+    font-size: 1.2rem;
+    margin: 0px 0px 0px 5px;
+}
+.search button{
+    @extend input;
+    background-color: $buttonBgColor;
+    color: white;
+    font-size:1rem ;
+    transition: 0.3s ;
+}
+
+.search button:hover{
+    background-color: rgb(14, 14, 141);
+}
+
+@import 'cardPokemon.scss';
+
+@import 'animations.scss'

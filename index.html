@@ -1,25 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="pt-br">
 <head>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="shortcut icon" href="public/icon-site.png" type="image/x-icon">
+    <link rel="stylesheet" href="assets/css/global.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Procurar Pokemón</title>
 </head>
-
 <body>
-    <div class="logo-pkm">
-        <img src="public/International_Pokémon_logo.svg.png" alt="">
+    <div class="top-img">
+        <img src="assets/public/pokemon-png-logo.webp" alt="Logo ">
     </div>
-    <div class="container-busca">
-        <label for="Nome do Pokemón">Informe o Nome ou o Id do Pokemón</label>
-        <input type="text" id="pokemon">
-        <button id="btn-enviar">Procurar</button>
-        <div id="err"></div>
+    <div class="search-container">
+        <div class="search">
+            <label for="Nome ou ID do pokemón">Informe o nome ou número da Pokedéx do Pokemón</label>
+            <input type="text" id="pokemon">
+            <button>Procurar</button>
+        </div>
     </div>
-      <div id="resultado"></div>
-    <script src="js/script.js"></script>
+    <div class="overlay"></div> 
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="assets/JS/searchPokemon.js"></script>
 </body>
 </html>

@@ -1,0 +1,151 @@
+  $background-card-start: #fff7cc;
+  $background-card-end: #ffe066;
+  $border-card: #ffcb05;
+  $shadow-dark: rgba(0, 0, 0, 0.3);
+  $shadow-offset: #c7a008;
+  $header-bg: #ffcb05;
+  $header-text: #2a2a2a;
+  $close-bg: #e53935;
+  $close-bg-hover: #be2725;
+  $close-text: #ffffff;
+  $image-bg: #ffffff;
+  $image-border: #333;
+  $info-bg: rgba(255, 255, 255, 0.8);
+  $info-text: #2a2a2a;
+  $line-gradient-start: transparent;
+  $line-gradient-middle: #333;
+  $line-gradient-end: transparent;
+  $tipo-eletrico-start: #fff176;
+  $tipo-eletrico-end: #ffd600;
+  $tipo-fogo-start: #ff8a65;
+  $tipo-fogo-end: #ff7043;
+  $tipo-agua-start: #4fc3f7;
+  $tipo-agua-end: #0288d1;
+  $tipo-grama-start: #81c784;
+  $tipo-grama-end: #388e3c;
+
+  /*
+    ORGANIZAÇÂO:
+        .card-pokemon
+            - .header-card
+                - header-left && .close-card#close-card
+            - .img-card
+            - .card-info
+  */
+  @mixin HeaderFlexBox($position: center, $value: 0.5rem) {
+      display: flex;
+      justify-content: $position;
+      align-items: center;
+      gap: $value;
+  }
+
+  .card-pokemon {
+      @include HeaderFlexBox();
+      flex-direction: column;
+      padding: 1rem;
+      border: 2px solid $border-card;
+      background: linear-gradient(to right, $background-card-start, $background-card-end);
+      border-radius: 12px;
+      box-shadow: 0px 10px 0px $shadow-offset;
+      max-width: 350px;
+      width: 100%;
+      position: fixed;
+      z-index: 1000;
+
+      animation: form 0.7s;
+  }
+  .header-card {
+      @include HeaderFlexBox(space-between);
+      padding: 0.6rem;
+      background-color: $header-bg;
+      color: $header-text;
+      width: 100%;
+      border-radius: 10px;
+  }
+
+  .header-left {
+      @include HeaderFlexBox();
+       img{
+            max-width: 40px;
+            width: 100%;
+       }
+  }
+
+  .overlay {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: $shadow-dark;
+      display: none;
+      pointer-events: all;
+  }
+
+  .img-card {
+      @include HeaderFlexBox(space-around);
+      background-color: $image-bg;
+      width: 100%;
+      border: 1px solid $image-border;
+  }
+  .img-card div{
+    @include HeaderFlexBox();
+    flex-direction: column;
+    text-align: center;
+  }
+  .img-card img {
+      max-width: 200px;
+      width: 100%;
+  }
+   %card-info-p {
+      background-color: $info-bg;
+      color: $info-text;
+      padding: 0.5rem;
+      font-size: 1.2rem;
+      width: 100%;
+      border-radius: 10px;
+  }
+  .card-info {
+      @include HeaderFlexBox();
+      flex-direction: column;
+      padding: 0.3rem;
+      width: 100%;
+      p{
+        @extend %card-info-p
+      }
+  }
+  
+
+  .stat{
+    @extend %card-info-p;
+  }
+  .close-card {
+      @include HeaderFlexBox();
+      background-color: $close-bg;
+      color: $close-text;
+      max-width: 30px;
+      width: 100%;
+      border-radius: 20px;
+      padding: 0.2rem;
+      cursor: pointer;
+  }
+
+  .close-card:hover {
+      background-color: $close-bg-hover;
+  }
+
+  .stats-pokemon {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+    gap: 0.6rem;
+    width: 100%;
+
+      p {
+          background-color: $info-bg;
+          color: $info-text;
+          padding: 0.5rem;
+          font-size: 1.2rem;
+          width: 100%;
+          border-radius: 10px;
+      }
+  }

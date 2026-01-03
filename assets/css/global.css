@@ -1,0 +1,227 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+  background-image: url(../public/background.jpg);
+  flex-direction: column;
+  gap: 4rem;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.top-img {
+  animation: Inpkm 0.8s forwards;
+}
+
+.top-img img {
+  max-width: 500px;
+  width: 100%;
+}
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 750px;
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.7215686275);
+  padding: 2rem;
+  border-radius: 12px;
+  background-color: rgba(255, 255, 255, 0.5607843137);
+  backdrop-filter: blur(10px);
+  animation: form 0.7s ease-in-out;
+}
+
+.search {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.search input, .search button {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid black;
+  border-radius: 12px;
+  font-size: 1rem;
+}
+
+.search label {
+  font-size: 1.2rem;
+  margin: 0px 0px 0px 5px;
+}
+
+.search button {
+  background-color: blue;
+  color: white;
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
+.search button:hover {
+  background-color: rgb(14, 14, 141);
+}
+
+/*
+  ORGANIZAÇÂO:
+      .card-pokemon
+          - .header-card
+              - header-left && .close-card#close-card
+          - .img-card
+          - .card-info
+*/
+.card-pokemon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  flex-direction: column;
+  padding: 1rem;
+  border: 2px solid #ffcb05;
+  background: linear-gradient(to right, #fff7cc, #ffe066);
+  border-radius: 12px;
+  box-shadow: 0px 10px 0px #c7a008;
+  max-width: 350px;
+  width: 100%;
+  position: fixed;
+  z-index: 1000;
+  animation: form 0.7s;
+}
+
+.header-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem;
+  background-color: #ffcb05;
+  color: #2a2a2a;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.header-left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+.header-left img {
+  max-width: 40px;
+  width: 100%;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: none;
+  pointer-events: all;
+}
+
+.img-card {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #ffffff;
+  width: 100%;
+  border: 1px solid #333;
+}
+
+.img-card div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  flex-direction: column;
+  text-align: center;
+}
+
+.img-card img {
+  max-width: 200px;
+  width: 100%;
+}
+
+.stat, .card-info p {
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #2a2a2a;
+  padding: 0.5rem;
+  font-size: 1.2rem;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.card-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  flex-direction: column;
+  padding: 0.3rem;
+  width: 100%;
+}
+.close-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #e53935;
+  color: #ffffff;
+  max-width: 30px;
+  width: 100%;
+  border-radius: 20px;
+  padding: 0.2rem;
+  cursor: pointer;
+}
+
+.close-card:hover {
+  background-color: #be2725;
+}
+
+.stats-pokemon {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.6rem;
+  width: 100%;
+}
+.stats-pokemon p {
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #2a2a2a;
+  padding: 0.5rem;
+  font-size: 1.2rem;
+  width: 100%;
+  border-radius: 10px;
+}
+
+@keyframes Inpkm {
+  from {
+    transform: translateY(50px);
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes form {
+  0% {
+    transform: scale(0.5);
+    opacity: 0.2;
+  }
+  100% {
+    transform: scale(1);
+  }
+}/*# sourceMappingURL=global.css.map */
