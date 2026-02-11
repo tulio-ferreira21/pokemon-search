@@ -1,10 +1,8 @@
 function createErroMessage(Mensagem) {
   const divSearch = document.querySelector('.search');
 
-  // Verifica se o elemento existe
   let errorMessage = document.querySelector('.error');
 
-  // Caso não exista, cria
   if (!errorMessage) {
     errorMessage = document.createElement('div');
     errorMessage.classList.add('error');
@@ -13,7 +11,6 @@ function createErroMessage(Mensagem) {
     divSearch.appendChild(errorMessage);
   }
 
-  // Se existir, atualiza
   errorMessage.style.display = 'block';
   errorMessage.innerText = Mensagem;
 
